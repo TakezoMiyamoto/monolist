@@ -5,12 +5,12 @@
         <div class="image">
           <div class="img-wrap">
             <% #TODO 商品画像 %>
-            
+            <%= image_tag item.get('LargeImage/URL') %>
           </div>
         </div>
         <div class="detail">
           <p class="title">
-            
+            <%= item.get('ItemAttributes/Title')%>
           </p>
         </div>
         <div class="action clearfix">
