@@ -1,6 +1,6 @@
 <div class="container">
   <div class="container-inner inner-default clearfix">
-    <% items.each do |item| %>
+    <% @amazon_items.item.each do |item| %>
       <div class="item-box">
         <div class="image">
           <div class="img-wrap">
@@ -13,7 +13,7 @@
         </div>
         <div class="detail">
           <p class="title">
-            <%= item.title %>
+            <%= @amazon_items.item.title %>
           </p>
         </div>
         <%= render 'items/action' , item: item if logged_in? %>
