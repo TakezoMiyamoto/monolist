@@ -8,7 +8,17 @@ class ItemsController < ApplicationController
                                   :search_index => 'All' , 
                                   :response_group => 'Medium' , 
                                   :country => 'jp')
-      @amazon_items = response.items
+      
+      @amazon_items = []
+      response.items.each do |item|
+        res = Item.new(
+          item.get('ItemAttributes/Title'),
+          item.get('LargeImage/URL'),
+          item.get('DetailPageURL'),
+          item.get('ASIN'),
+          )
+        @amazon_items << res
+      end
     end
   end
 
