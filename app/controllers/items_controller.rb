@@ -9,16 +9,7 @@ class ItemsController < ApplicationController
                                   :response_group => 'Medium' , 
                                   :country => 'jp')
       
-      @amazon_items = []
-      response.items.each do |item|
-        res = Item.new(
-          item.get('ItemAttributes/Title'),
-          item.get('LargeImage/URL'),
-          item.get('DetailPageURL'),
-          item.get('ASIN'),
-          )
-        @amazon_items << res
-      end
+      @amazon_items = response.items
     end
   end
 
