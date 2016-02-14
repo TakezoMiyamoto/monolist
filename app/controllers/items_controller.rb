@@ -8,6 +8,7 @@ class ItemsController < ApplicationController
                                   :search_index => 'All' , 
                                   :response_group => 'Medium' , 
                                   :country => 'jp')
+      
       @amazon_items = response.items
     end
   end
