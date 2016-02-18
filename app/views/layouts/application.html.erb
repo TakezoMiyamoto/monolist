@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <% if content_for?(:head) %>
-    <%= yield :head %>
-  <% else %>
-    <title>Monolist</title>
-  <% end %>
+  
+   <title><%= @title ? "#{@title} - monolist" : 'monolist' %></title>
+   <%= yield :head %>
+  
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>

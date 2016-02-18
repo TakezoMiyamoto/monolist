@@ -13,6 +13,7 @@ class ItemsController < ApplicationController
   end
 
   def show
+    @title = @item.title
   end
 
   private
