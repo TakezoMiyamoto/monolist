@@ -1,8 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-  
-   <title><%= @title ? "#{@title} - monolist" : 'monolist' %></title>
+  <% if @title.present? %>
+   <title><%= "[#{@title}] - monolist" %></title>
+  <% elsif @userName.present? %>
+   <title><%= "[#{@userName}] - monolist" %></title>
+  <% else %>
+  <title><%= 'monolist' %></title>
+  <% end %>
    <%= yield :head %>
   
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
