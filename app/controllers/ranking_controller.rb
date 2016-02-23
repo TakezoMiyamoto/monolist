@@ -1,4 +1,5 @@
 class RankingController < ApplicationController
+    before_action :logged_in_user
     
     def have
         @item_ids = Have.group(:item_id).order('count_item_id desc').limit(10).count('item_id').keys
