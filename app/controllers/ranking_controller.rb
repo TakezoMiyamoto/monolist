@@ -1,4 +1,5 @@
 class RankingController < ApplicationController
+    # Login first
     before_action :logged_in_user
     
     def have
@@ -6,6 +7,7 @@ class RankingController < ApplicationController
         @type = "haves"
         @items = Item.find(@item_ids).sort_by{|o| @item_ids.index(o.id)}
         @number = 0
+        @rankingTilte = "Have ランキング"
     end
     
     def want
@@ -14,6 +16,7 @@ class RankingController < ApplicationController
         @type = "wants"
         @items = Item.find(@item_ids).sort_by{|o| @item_ids.index(o.id)}
         @number = 0
+         @rankingTilte = "Want ランキング"
     end
   
   

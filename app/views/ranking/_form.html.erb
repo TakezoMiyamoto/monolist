@@ -1,11 +1,10 @@
 <!--メタ情報を入れる-->
 <% if :type == "wants" %>
+
 <% elsif :type == "haves" %>
+
 <% end %>
 
-<!--レイアウト-->
-<!-- ログインさせる。そうじゃないとLink飛ぶ時にエラーになる -- >
-<!--データーがない場合の回避策-->
 <div class="container">
   <div class="container-inner inner-default clearfix">
     <% items.each do |item| %>

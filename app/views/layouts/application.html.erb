@@ -5,6 +5,8 @@
    <title><%= "[#{@title}] - monolist" %></title>
   <% elsif @userName.present? %>
    <title><%= "[#{@userName}] - monolist" %></title>
+  <% elsif @rankingTilte.present? %>
+   <title><%= "#{@rankingTilte} - monolist" %></title>
   <% else %>
   <title><%= 'monolist' %></title>
   <% end %>
