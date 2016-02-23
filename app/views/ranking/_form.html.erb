@@ -1,8 +1,6 @@
-<!--メタ情報を入れる-->
-<% if :type == "wants" %>
-
-<% elsif :type == "haves" %>
-
+<% content_for :head do %>
+  <meta name="title" content="<%= @rankingTilte %>">
+  <meta name="description" content="<%= @rankingTilte %>に関する情報です。<%=@rankingTilte %>の数が多い商品のTop 10 を表示しています。">
 <% end %>
 
 <div class="container">
