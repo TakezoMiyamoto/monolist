@@ -1,0 +1,42 @@
+<!--メタ情報を入れる-->
+<% if :type == "wants" %>
+<% elsif :type == "haves" %>
+<% end %>
+
+<!--レイアウト-->
+<!-- ログインさせる。そうじゃないとLink飛ぶ時にエラーになる -- >
+<!--データーがない場合の回避策-->
+<div class="container">
+  <div class="container-inner inner-default clearfix">
+    <% items.each do |item| %>
+        <div class="row">
+          <div class="col-sm-2 text-right">
+            <h3 class="title"><%= @number+=1 %> 位</h3>
+          </div>
+          
+          <div class="col-sm-4">
+            <div class="item-box">
+              <div class="image">
+                <div class= "img-wrap">
+                  <% unless item.large_image == nil %>
+                    <%= link_to image_tag(item.large_image, alt: item.title), item_url(id: item.id) %>
+                  <% else %>
+                    <%= link_to image_tag('no-image.png', alt: item.title), item_url(id: item.id) %>
+                  <% end %>
+                </div>
+              </div>
+          </div>
+          </div>
+          <div class="col-sm-4">
+            <div>
+              <% unless item.title == nil  %>
+                <h2 class="title"><%= item.title %></h2>
+              <% else %>
+                <h2 class="title"><%= "No Title" %></h2>
+              <% end %>
+            </div>
+          </div>
+        </div>
+    <% end %>
+  </div>
+</div>
